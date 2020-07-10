@@ -25,13 +25,14 @@ class EventSourcer():
         Notes:
         * `amount` should be negative to travel backwards, positive to travel forwards
         """
-        
-        
+
+
         adjusted_idx = (self.history_position+amount, self.history_position)
 
         # Sum all of the actions done between the range we want to undo/redo
         undone_actions = sum(self.history[min(adjusted_idx):max(adjusted_idx)])
-        
+
+        # Check if undoing or redoing, and update the value accordingly
         self.value -= undone_actions if amount < 0 else -undone_actions
         self.history_position += amount
 
