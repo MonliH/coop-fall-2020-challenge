@@ -20,7 +20,7 @@ class EventSourcer():
         """Update value based on history position
 
         Positional Arguments:
-        amount -- how far back into the history to travel. 
+        amount -- how far back into the history to travel.
 
         Notes:
         * `amount` should be negative to travel backwards, positive to travel forwards
